@@ -31,14 +31,19 @@ const Logo = styled.a`
     color: #fff;
 `;
 
-class Header extends React.Component {
-    render() {
-        return (<HeaderWrapper>
+const Layout = (props) => (
+    <div>
+        <HeaderWrapper>
             <Nav>
                 <Logo data-test="ImgLogo" href="/">HEY JOBS</Logo>
             </Nav>
-        </HeaderWrapper >);
-    }
-}
+        </HeaderWrapper >
 
-export default Header;
+        <div>
+            { props.children }
+        </div>
+
+    </div>
+)
+
+export default Layout

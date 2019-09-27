@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { fetchJobDetailsIfNeeded } from '../../redux/actions';
+import { fetchJobDetailsIfNeeded } from './redux/actions';
 import { connect } from 'react-redux';
 import JobDetails from './JobDetails';
-import NotFound from './NotFound';
+import NotFound from '../common/NotFound';
 
 const Wrapper = styled.section`
     padding: 2em;
@@ -30,13 +30,13 @@ class JobDetailsContainer extends React.Component {
     }
 
     render() {
-        const { isFetching, jobdetails } = this.props
+        const { isFetching, jobdata } = this.props
         return (
             <Wrapper>
                 <AnchorLink data-test="BacktoJobs" href={'/'}> Back to Jobs </AnchorLink>
-                {isFetching && jobdetails.length === 0 && <h2>Loading...</h2>}
-                {!isFetching && jobdetails.length === 0 && <NotFound />}
-                <JobDetails jobdetails={this.props.jobdetails} isFetching={this.props.isFetching}></JobDetails>
+                {isFetching && jobdata.length === 0 && <h2>Loading...</h2>}
+                {!isFetching && jobdata.length === 0 && <NotFound />}
+                <JobDetails jobdata={this.props.jobdata} isFetching={this.props.isFetching}></JobDetails>
             </Wrapper>
         );
     }
@@ -44,11 +44,9 @@ class JobDetailsContainer extends React.Component {
 
 function mapStateToProps(state) {
     debugger;
-    const { isFetching, jobdetails } = state
-
     return {
-        isFetching,
-        jobdetails
+        isFetching : state.jobs.isFetching,
+        jobdata : state.jobs.jobdata,
     }
 }
 

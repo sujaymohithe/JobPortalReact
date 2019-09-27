@@ -96,29 +96,29 @@ class JobDetails extends React.Component {
 
     }
     render() {
-        const { isFetching, jobdetails } = this.props
+        const { isFetching, jobdata } = this.props
         return (
             <div id="jobDetailsView">                
-                {jobdetails.title && !isFetching &&
+                {jobdata.title && !isFetching &&
                     <Row>
                         <h2>Job Description</h2>
                         <Widget>
                             <Boxwidget>
                                 <Cardheader>
-                                    <Cardheader>{jobdetails.title}</Cardheader>
+                                    <Cardheader>{jobdata.title}</Cardheader>
                                 </Cardheader>
                                 <Cardblock>
-                                    <CardblockPInline>Employment Type - </CardblockPInline><CardblockPInline>{jobdetails.employment_type}</CardblockPInline>
+                                    <CardblockPInline>Employment Type - </CardblockPInline><CardblockPInline>{jobdata.employment_type}</CardblockPInline>
                                 </Cardblock>
                                 <Cardblock>
-                                    <CardblockPInline>Posted Date - </CardblockPInline><CardblockPInline>{jobdetails.posted_date}</CardblockPInline>
+                                    <CardblockPInline>Posted Date - </CardblockPInline><CardblockPInline>{jobdata.posted_date}</CardblockPInline>
                                 </Cardblock>
                                 <Cardblock>
                                     <CardblockP>Technical & Professional requirements: </CardblockP>
                                     <div>
-                                        {jobdetails.Requirement && jobdetails.Requirement.length > 0 &&
+                                        {jobdata.Requirement && jobdata.Requirement.length > 0 &&
                                             <List>
-                                                {jobdetails.Requirement.map(this.RequirementList, this)}
+                                                {jobdata.Requirement.map(this.RequirementList, this)}
                                             </List>
                                         }
                                     </div>

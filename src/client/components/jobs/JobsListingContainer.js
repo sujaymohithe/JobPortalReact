@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchJobsIfNeeded } from '../../redux/actions';
+import { fetchJobsIfNeeded } from './redux/actions';
 import { connect } from 'react-redux'
 import styled from 'styled-components';
 import Job from './Job';
@@ -27,13 +27,12 @@ class JobsListingContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    debugger;
-    const { isFetching, jobs } = state
-
     return {
-        isFetching,
-        jobs
+        isFetching : state.jobs.isFetching,
+        jobs : state.jobs.list,
     }
 }
+
+
 
 export default connect(mapStateToProps)(JobsListingContainer)
