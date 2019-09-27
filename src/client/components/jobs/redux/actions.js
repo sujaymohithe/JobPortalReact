@@ -103,7 +103,6 @@ function fetchJobDetails(id) {
   return dispatch => {
     dispatch(requestJobDetails())
     let index = jobsData.map(e => e.id).indexOf(id);
-    debugger;
     return dispatch(receiveJobDetails(index != -1 ? jobsData[index] : []));
   }
 }

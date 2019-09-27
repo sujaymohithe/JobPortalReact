@@ -15,7 +15,6 @@ const AnchorLink = styled.a`
 
 class JobDetailsContainer extends React.Component {
     constructor(props) {
-        debugger;
         super(props);
         var param = this.props.match.params.id;
         this.state = {
@@ -24,7 +23,6 @@ class JobDetailsContainer extends React.Component {
     }
 
     componentDidMount() {
-        debugger;
         const { dispatch } = this.props
         dispatch(fetchJobDetailsIfNeeded(parseInt(this.state.jobID)))
     }
@@ -43,7 +41,6 @@ class JobDetailsContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    debugger;
     return {
         isFetching : state.jobs.isFetching,
         jobdata : state.jobs.jobdata,

@@ -11,7 +11,6 @@ const Wrapper = styled.section`
 class JobsListingContainer extends React.Component {
 
     componentDidMount() {
-        debugger;
         const { dispatch } = this.props
         dispatch(fetchJobsIfNeeded())
     }    
