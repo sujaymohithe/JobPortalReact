@@ -5,6 +5,10 @@ Use chrome browser, IE is not supported
 
 In the project directory, you can run:
 
+### `npm install`
+
+To create node modules folder to run the application.
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
