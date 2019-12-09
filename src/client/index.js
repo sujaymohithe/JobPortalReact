@@ -17,7 +17,7 @@ const Client = () => (
     </Provider>
 )
 
-// Mount client app
+// Mount client app - server side rendering
 window.onload = () => {
     hydrate(
         <Client />,
