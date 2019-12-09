@@ -1,7 +1,7 @@
 {
   "name": "ssrjobportal",
   "version": "1.0.0",
-  "description": "",
+  "description": "server side rendering example",
   "main": "index.js",
   "scripts": {
     "build": "set NODE_ENV=development && webpack -d",
